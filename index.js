@@ -75,7 +75,7 @@ app.get('/search/:searchQuery', async (req, res) => {
 		const response = await request(
 			`${generateScraperURL(
 				api_key
-			)}&url=https://www.amazon.in/gp/offer-listing/${searchQuery}`
+			)}&url=https://www.amazon.in/s?k=${searchQuery}`
 		)
 
 		res.json(JSON.parse(response))
