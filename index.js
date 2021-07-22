@@ -11,7 +11,8 @@ const generateScraperURL = (apiKey) =>
 app.use(express.json())
 
 app.get('/', async (req, res) => {
-	res.send('Welcome to Amazon Scraper API!')
+	res.send('Welcome to Amazon Scraper API! ')
+	console.log('?api_key=fa8f7a097070decd2316b453ec757601')
 })
 
 //fetching product details
@@ -69,12 +70,12 @@ app.get('/products/:productId/offers', async (req, res) => {
 //fetching search results
 app.get('/search/:searchQuery', async (req, res) => {
 	const { searchQuery } = req.params
-	const { api_key } = req.params
+	const { api_key } = req.query
 	try {
 		const response = await request(
 			`${generateScraperURL(
 				api_key
-			)}&url=https://www.amazon.in/s?k=${searchQuery}`
+			)}&url=https://www.amazon.in/gp/offer-listing/${searchQuery}`
 		)
 
 		res.json(JSON.parse(response))
