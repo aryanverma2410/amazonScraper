@@ -11,7 +11,9 @@ const generateScraperURL = (apiKey) =>
 app.use(express.json())
 
 app.get('/', async (req, res) => {
-	res.send('Welcome to Amazon Scraper API! ')
+	res.send(
+		'Welcome to Amazon Scraper API!     Try: https://av-amazon-scraper.herokuapp.com/search/YOUR_SEARCH_QUERY?api_key=YOUR_SCRAPER_API_KEY'
+	)
 	console.log('?api_key=fa8f7a097070decd2316b453ec757601')
 })
 
