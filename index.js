@@ -12,7 +12,12 @@ app.use(express.json())
 
 app.get('/', async (req, res) => {
 	res.send(
-		'Welcome to Amazon Scraper API!     Try: https://av-amazon-scraper.herokuapp.com/search/YOUR_SEARCH_QUERY?api_key=YOUR_SCRAPER_API_KEY'
+		'Welcome to Amazon Scraper API! ',
+		'Try:',
+		'1- https://av-amazon-scraper.herokuapp.com/search/YOUR_SEARCH_QUERY?api_key=YOUR_SCRAPER_API_KEY -- to fetch search results',
+		'2- https://av-amazon-scraper.herokuapp.com/products/:productId?api_key=YOUR_SCRAPER_API_KEY -- to fetch a specific product',
+		'3- https://av-amazon-scraper.herokuapp.com//products/:productId/reviews?api_key=YOUR_SCRAPER_API_KEY -- to fetch reviews of a specific product',
+		'4- https://av-amazon-scraper.herokuapp.com/products/:productId/offers?api_key=YOUR_SCRAPER_API_KEY -- to fetch offers on a specific product'
 	)
 	console.log('?api_key=fa8f7a097070decd2316b453ec757601')
 })
