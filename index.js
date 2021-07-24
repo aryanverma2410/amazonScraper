@@ -11,14 +11,10 @@ const generateScraperURL = (apiKey) =>
 app.use(express.json())
 
 app.get('/', async (req, res) => {
-	res.send(
-		'Welcome to Amazon Scraper API! ',
-		'Try:',
-		'1- https://av-amazon-scraper.herokuapp.com/search/YOUR_SEARCH_QUERY?api_key=YOUR_SCRAPER_API_KEY -- to fetch search results',
-		'2- https://av-amazon-scraper.herokuapp.com/products/:productId?api_key=YOUR_SCRAPER_API_KEY -- to fetch a specific product',
-		'3- https://av-amazon-scraper.herokuapp.com//products/:productId/reviews?api_key=YOUR_SCRAPER_API_KEY -- to fetch reviews of a specific product',
-		'4- https://av-amazon-scraper.herokuapp.com/products/:productId/offers?api_key=YOUR_SCRAPER_API_KEY -- to fetch offers on a specific product'
+	res.write(
+		'Welcome to Amazon Scraper API by Aryan Verma! \nA react web app that works as a web Scraping API that can fetch product details, reviews and offers on a product. It also has functionality to search from amazon and then fetch all the searched products from amazon page. \nTry: \n1- to fetch search results -- https://av-amazon-scraper.herokuapp.com/search/YOUR_SEARCH_QUERY?api_key=YOUR_SCRAPER_API_KEY  \n2- to fetch a specific product -- https://av-amazon-scraper.herokuapp.com/products/:productId?api_key=YOUR_SCRAPER_API_KEY  \n3- to fetch reviews of a specific product --  https://av-amazon-scraper.herokuapp.com//products/:productId/reviews?api_key=YOUR_SCRAPER_API_KEY  \n4- to fetch offers on a specific product -- https://av-amazon-scraper.herokuapp.com/products/:productId/offers?api_key=YOUR_SCRAPER_API_KEY '
 	)
+	res.end()
 	console.log('?api_key=fa8f7a097070decd2316b453ec757601')
 })
 
